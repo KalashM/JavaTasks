@@ -2,7 +2,7 @@ package com.example;
 
 public class Task4 {
 
-    public static int SumOfFactSequence (int n) {
+    public static int sumOfFactSequence (int n) {
         int res = 1;
         for (int i=2; i<=n; i++) {
             int fact=1;

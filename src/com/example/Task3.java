@@ -1,7 +1,7 @@
 package com.example;
 
 public class Task3 {
-    public static String CheckToSimple(int a) {
+    public static String checkToSimple(int a) {
 
         String res;
         int col = 0;

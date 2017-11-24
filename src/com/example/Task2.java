@@ -1,7 +1,7 @@
 package com.example;
 
 public class Task2 {
-    public static String SumOfDigits (int x) {
+    public static String sumOfDigits (int x) {
         int sum = x%10;
         int div = (int) x/10;
         do {
