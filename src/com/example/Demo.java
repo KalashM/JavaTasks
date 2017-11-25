@@ -9,6 +9,7 @@ public class Demo {
       boolean simpleCheck = Task3.checkToSimple(98765);
       int sumFact = Task4.sumOfFactSequence(8);
       int luckyNum = Task5.numberOfLuckyNumbers(100001,100100);
+      int[] testFibonachi = Task6.arrayOfFibonachi(20);
 
 
       System.out.println("maxDiv = " + maxDiv);
@@ -16,6 +17,9 @@ public class Demo {
       System.out.println("simpleCheck = " + simpleCheck);
       System.out.println("sumFact = " + sumFact);
       System.out.println("luckyNum = " + luckyNum);
+      for (int i=0; i<testFibonachi.length; i++) {
+          System.out.println(testFibonachi[i]);
+      }
   }
 
 }
