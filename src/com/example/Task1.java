@@ -1,7 +1,7 @@
 package com.example;
 
 public class Task1 {
-    public static String maxCommonDivisor (int a , int b) {
+    public static int maxCommonDivisor (int a , int b) {
 
 
         int max = 1;
@@ -18,9 +18,7 @@ public class Task1 {
             }
         }
 
-        String res = "Max common divisor = " + max;
-
-        return res;
+        return max;
 
     }
 }

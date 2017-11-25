@@ -7,7 +7,6 @@ public class Task4 {
         for (int i=2; i<=n; i++) {
             int fact=1;
             for (int j=2; j<=i; j++) {
-                System.out.println(j);
                 fact = fact * j;
             }
             if (i%2 ==0) {
