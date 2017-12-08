@@ -1,8 +1,8 @@
 package com.example;
 
 public class Task1 {
-    public static int maxCommonDivisor (int a , int b) {
 
+    public static int maxCommonDivisor(int a, int b) {
 
         int max = 1;
         int minNum;
@@ -12,8 +12,8 @@ public class Task1 {
             minNum = b;
         }
 
-       for (int i=1; i<=minNum; i++) {
-            if (a%i == 0 && b%i == 0){
+        for (int i = 1; i <= minNum; i++) {
+            if (a % i == 0 && b % i == 0) {
                 max = i;
             }
         }

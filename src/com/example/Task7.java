@@ -9,14 +9,13 @@ public class Task7 {
             arrRes[j] = 0;
             int i;
             for (i = j + 1;  ; i++) {
-                if (Task3.checkToSimple(i)) {
+                if (Task3.isSimple(i)) {
                     arrRes[j] = i;
                 } else {
                     arrRes[j] = 0;
                 }
                 break;
             }
-
         }
         return arrRes;
     }

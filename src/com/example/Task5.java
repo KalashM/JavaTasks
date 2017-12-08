@@ -8,7 +8,6 @@ public class Task5 {
     }*/
 
     public static int numberOfLuckyNumbers (int startRange, int endRange){
-   //public static void main(String[] args) {
         int res = 0;
         int iRes;
         for (int i = startRange; i<=endRange; i++) {
