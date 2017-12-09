@@ -50,4 +50,8 @@ public class User {
     public String toString() {
         return String.format("User: [name: %s, surname: %s, email: %s, password: %s]", name, surname, email, password);
     }
+
+    public String getStringLine() {
+        return String.format("%s %s %s %s %n", name, surname, email, password);
+    }
 }

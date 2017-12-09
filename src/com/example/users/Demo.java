@@ -15,34 +15,23 @@ public class Demo {
 
     public static void main(String[] args) throws IOException {
         UsersLocation location = new FileLocation();
-
         UserRepository repository = new UserRepository(location);
-
         Scanner scanner = new Scanner(System.in);// Scanner is a special class that can read data from the given source. In our case - its console
 
         showMenu(scanner, repository, location);
     }
 
-    private static void showMenu(Scanner scanner, UserRepository repository, UsersLocation location) {
-        String option = Reader.readOption(scanner);
+    private static void showMenu(Scanner scanner, UserRepository repository, UsersLocation location) throws IOException {
+        String option = readOption(scanner);
         if ("1".equals(option)) {
             registerUser(scanner, repository);
-        } else if ("2".equals(option)){
-            System.out.println("Marina!! You need to write logic to login user");
-            //ask user's email
-            //check if user exists in repository
-            // if exists:
-            // print user information to console
-            // if doesn't exist
-            // print message that user doesn't exist
-            // and show menu
-        } else if ("0".equals(option)) {
-            location.write(repository.getUsers());
-            scanner.close();
-            System.exit(0);
-        }else{
-            System.out.println("Invalid option");
             showMenu(scanner, repository, location);
+        } else if ("2".equals(option)){
+
+        } else if ("0".equals(option)) {
+            exit(scanner, repository, location);
+        }else{
+            handleInvalidOption(scanner, repository, location);
         }
     }
 
@@ -51,5 +40,16 @@ public class Demo {
         System.out.println(user);
         repository.add(user);
         System.out.println("User successfully registered");
+    }
+
+    private static void handleInvalidOption(Scanner scanner, UserRepository repository, UsersLocation location) throws IOException {
+        System.out.println("Invalid option");
+        showMenu(scanner, repository, location);
+    }
+
+    private static void exit(Scanner scanner, UserRepository repository, UsersLocation location) throws IOException {
+        location.write(repository.getUsers());
+        scanner.close();
+        System.exit(0);
     }
 }

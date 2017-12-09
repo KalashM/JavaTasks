@@ -15,5 +15,5 @@ public interface UsersLocation {
 
     List<User> read() throws IOException;
 
-    void write(List<User> users);
+    void write(List<User> users) throws IOException;
 }
