@@ -15,6 +15,7 @@ public class Demo {
       int[] arrSimpleNums = Task7.getListOfSimpleNumbers(7);
       char[][] arrChess = Task8.chessArray(5,5);
       int[][][][][][] sixDimArr = Task9.sixDimensionalArray(2);
+      int[][] pascalMatrix = Task10.getTriangleMatrix(10);
 
       System.out.println("maxDiv = " + maxDiv);
       System.out.println("sum = " + sum);
@@ -40,6 +41,13 @@ public class Demo {
       //print 6 dimensional array from task9
       System.out.println(Arrays.deepToString(sixDimArr));
 
+      //print array from task10
+      for(int i = 0; i<pascalMatrix.length; i++){
+          for(int j = 0; j<pascalMatrix[i].length; j++){
+              System.out.print(pascalMatrix[i][j] + " ");
+          }
+          System.out.println();
+      }
 
   }
 
