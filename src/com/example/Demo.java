@@ -14,6 +14,7 @@ public class Demo {
       int[] testFibonachi = Task6.arrayOfFibonachi(20);
       int[] arrSimpleNums = Task7.getListOfSimpleNumbers(7);
       char[][] arrChess = Task8.chessArray(5,5);
+      int[][][][][][] sixDimArr = Task9.sixDimensionalArray(2);
 
       System.out.println("maxDiv = " + maxDiv);
       System.out.println("sum = " + sum);
@@ -26,7 +27,20 @@ public class Demo {
       for (int i=0; i<arrSimpleNums.length; i++) {
           System.out.println(arrSimpleNums[i]);
       }
-      System.out.println(Arrays.deepToString(arrChess));
+      //System.out.println(Arrays.deepToString(arrChess));
+
+      //print array from task8
+      for(int i = 0; i<arrChess.length; i++){
+          for(int j = 0; j<arrChess[i].length; j++){
+              System.out.print(arrChess[i][j] + " ");
+          }
+          System.out.println();
+      }
+
+      //print 6 dimensional array from task9
+      System.out.println(Arrays.deepToString(sixDimArr));
+
+
   }
 
 }
