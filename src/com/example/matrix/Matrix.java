@@ -32,7 +32,15 @@ public class Matrix {
      * Transpose current matrix
      */
     public void transpose(){
-
+        int [][] matrixToTranspose = new int[columns][rows];
+        for (int i = 0; i < columns; i++) {
+            for (int j = 0; j < rows; j++) {
+                matrixToTranspose[i][j] = matrix[j][i];
+            }
+        }
+        matrix = matrixToTranspose;
+        this.rows = matrix.length;
+        this.columns = matrix[0].length;
     }
 
     /**
