@@ -84,7 +84,21 @@ public class Matrix {
      * @param matrix
      */
     public void multiply(Matrix matrix) {
-
+        if (this.columns == matrix.rows){
+            int [][] multipliedMatrix = new int [this.rows][matrix.columns];
+            for (int i=0; i<this.rows; i++) {
+                for (int j=0; j<matrix.columns; j++) {
+                    for (int p=0; p<this.columns; p++) {
+                        multipliedMatrix[i][j] += this.matrix[i][p]*matrix.matrix[p][j];
+                    }
+                }
+            }
+            this.matrix = multipliedMatrix;
+            this.rows = this.matrix.length;
+            this.columns = this.matrix[0].length;
+        } else {
+            System.out.println("Matrices cannot be multiplied!!!");
+        }
     }
 
     /**
