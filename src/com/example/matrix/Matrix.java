@@ -48,7 +48,15 @@ public class Matrix {
      * @param matrix
      */
     public void add(Matrix matrix){
-
+        if (matrix.columns == this.columns && matrix.rows == this.rows) {
+            for (int i=0; i<rows; i++) {
+                for (int j=0; j<columns; j++){
+                    this.matrix[i][j] = this.matrix[i][j] + matrix.matrix[i][j];
+                }
+            }
+        } else {
+            System.out.println("Matrices with different size cannot be summarized!!!");
+        }
     }
 
     /**
