@@ -4,14 +4,12 @@ public class User {
 
     private String name;
     private String surname;
-    private String email;
-    private String password;
+    private Credentials credentials;
 
     public User(String name, String surname, String email, String password) {
         this.name = name;
         this.surname = surname;
-        this.email = email;
-        this.password = password;
+        this.credentials = new Credentials(email, password);
     }
 
     public String getName() {
@@ -31,27 +29,20 @@ public class User {
     }
 
     public String getEmail() {
-        return email;
+        return credentials.getEmail();
     }
 
-    public void setEmail(String email) {
-        this.email = email;
-    }
 
     public String getPassword() {
-        return password;
-    }
-
-    public void setPassword(String password) {
-        this.password = password;
+        return credentials.getPassword();
     }
 
     @Override
     public String toString() {
-        return String.format("User: [name: %s, surname: %s, email: %s, password: %s]", name, surname, email, password);
+        return String.format("User: [name: %s, surname: %s, email: %s]", name, surname, credentials.getEmail());
     }
 
     public String getStringLine() {
-        return String.format("%s %s %s %s %n", name, surname, email, password);
+        return String.format("%s %s %s %n", name, surname, credentials.getEmail());
     }
 }

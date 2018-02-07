@@ -1,3 +1,13 @@
 .idea/
 javatasks.iml
 out/
+index-files/
+jquery/
+mysql-5.7.20-winx64/
+resources/
+*.html
+*.js
+*.zip
+*.jar
+package-list
+*.css

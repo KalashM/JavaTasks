@@ -1,6 +1,7 @@
 package com.example.users.util;
 
 
+import com.example.users.model.Credentials;
 import com.example.users.model.User;
 
 import java.util.Scanner;
@@ -13,6 +14,12 @@ public class Reader {
         String name = readName(scanner);
         String surname = readSurname(scanner);
         return new User(name, surname, email, password);
+    }
+
+    public static Credentials readCredentials (Scanner scanner) {
+        String email = readEmail(scanner);
+        String password = readPassword(scanner);
+        return new Credentials (email, password);
     }
 
     public static String readEmail(Scanner scanner) {

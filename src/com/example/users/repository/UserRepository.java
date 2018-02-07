@@ -21,7 +21,7 @@ public class UserRepository {
      * Read users from location when the class is initializing
      */
     public UserRepository(UsersLocation location) throws IOException {
-        users = location.read();
+        this.users = location.read();
     }
 
 
@@ -33,8 +33,14 @@ public class UserRepository {
      * This method gets user by given email
      */
     public User get(String email){
-         Optional<User> user = users.stream().filter(u -> email.equals(u.getEmail())).findFirst();
-         return user.orElse(null);
+        for(User user: users){
+            if (user.getEmail().equals(email)){
+                return user;
+            }
+        }
+      return null;
+       /*  Optional<User> user = users.stream().filter(u -> email.equals(u.getEmail())).findFirst();
+         return user.orElse(null);*/
     }
 
     public List<User> getUsers(){

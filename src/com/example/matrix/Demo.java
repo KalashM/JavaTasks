@@ -11,18 +11,18 @@ public class Demo {
         Matrix matrixToAdd = new Matrix(array1);
         int[][] array2 = {{1,1,1},{2,2,2},{3,3,3}};
         Matrix matrixToMultiply = new Matrix(array2);
+
         matrix.print();
 
-        matrix.multiply(10);
-        matrix.print();
-
+        /*matrix.multiply(10);
+        matrix.print();*/
         matrix.transpose();
         matrix.print();
 
-        matrix.add(matrixToAdd);
+       /* matrix.add(matrixToAdd);
         matrix.print();
 
         matrix.multiply(matrixToMultiply);
-        matrix.print();
+        matrix.print();*/
     }
 }

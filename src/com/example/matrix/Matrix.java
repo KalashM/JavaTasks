@@ -55,15 +55,56 @@ public class Matrix {
                 }
             }
         } else {
-            System.out.println("Matrices with different size cannot be summarized!!!");
+            throw new IllegalArgumentException("Matrices with different size cannot be summarized!!!");
+            //System.out.println("Matrices with different size cannot be summarized!!!");
         }
     }
+
+    /**
+     * Get determinant of current matrix
+     * @param matrix
+     */
+    public int getDeterminant(Matrix matrix){
+        int det = 0;
+        if (matrix.rows == matrix.columns) {
+            int n = matrix.rows; // n - dimension of matrix
+            if (n == 1) {
+                det = matrix.matrix[0][0];
+            } else if (n == 2) {
+                det = matrix.matrix[0][0]*matrix.matrix[1][1] - matrix.matrix[0][1]*matrix.matrix[1][0];
+            } else if (n == 3) {
+                det = matrix.matrix[0][0]*matrix.matrix[1][1]*matrix.matrix[2][2]
+                        + matrix.matrix[1][0]*matrix.matrix[2][1]*matrix.matrix[0][2]
+                        + matrix.matrix[0][1]*matrix.matrix[1][2]*matrix.matrix[2][0]
+                        - (matrix.matrix[0][2]*matrix.matrix[1][1]*matrix.matrix[2][0]
+                            + matrix.matrix[2][1]*matrix.matrix[1][2]*matrix.matrix[0][0]
+                            + matrix.matrix[1][0]*matrix.matrix[0][1]*matrix.matrix[2][2]
+                        );
+            } else det =0;
+        }
+        return det;
+    }
+    public void getCofactor (Matrix matrix, int r, int c){
+        if (matrix.rows == matrix.columns) {
+            int n = matrix.rows; // n - dimension of matrix
+            if (n == 3) {
+                int [][] temp = new int[n-1][n-1];
+                
+            }
+        }
+    }
+
 
     /**
      * Divide matrix from current matrix
      * @param matrix
      */
     public void divide(Matrix matrix){
+        if (this.columns == matrix.rows && matrix.rows == matrix.columns && getDeterminant(matrix)!= 0) {
+            
+        } else {
+            System.out.println("Not possible to divide!!!");
+        }
 
     }
 
