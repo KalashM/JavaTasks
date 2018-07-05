@@ -1,8 +1,5 @@
 package com.prometheus.task3;
 
-/**
- * Created by kalashnyk on 07/05/2018.
- */
 public class Demo {
     public static void main(String[] args) {
         LinkedList l1 = new LinkedList();
@@ -11,5 +8,9 @@ public class Demo {
         l1.add(1);
 
         l1.printList();
+        System.out.println();
+        int k = l1.get(2);
+        System.out.println(k);
+
     }
 }

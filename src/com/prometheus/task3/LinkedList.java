@@ -1,10 +1,5 @@
 package com.prometheus.task3;
 
-/**
- * Created by kalashnyk on 07/05/2018.
- */
-import com.prometheus.task3.Node;
-
 public class LinkedList {
     private Node tail;
     private Node head;
@@ -27,14 +22,21 @@ public class LinkedList {
     }
 
     public Integer get(int index) {
-        if (head == null || tail == head) {
-            return null;
-        } else {
-            for (int i=0; i<=index; i++) {
+       if (index < 0 ) {
+           return null;
+       }
+       int i=0;
+        Node n = head;
 
-            }
+        while (i <= index && n != null) {
+           if (i == index) {
+               return n.getData();
+           } else {
+               n = n.getNext();
+               i++;
+           }
         }
-
+        return null;
     }
 
    /* public boolean delete(int index) {

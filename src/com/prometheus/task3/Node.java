@@ -1,8 +1,5 @@
 package com.prometheus.task3;
 
-/**
- * Created by kalashnyk on 07/05/2018.
- */
 public class Node{
     public Node next;
     public Integer data;
