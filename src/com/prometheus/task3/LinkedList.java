@@ -21,28 +21,59 @@ public class LinkedList {
         }
     }
 
-    public Integer get(int index) {
+    public Integer get(int index) throws NullPointerException {
        if (index < 0 ) {
            return null;
        }
-       int i=0;
+        int  i=0;
         Node n = head;
 
         while (i <= index && n != null) {
            if (i == index) {
                return n.getData();
            } else {
-               n = n.getNext();
-               i++;
+               if (n.getNext() != null ) {
+                   n = n.getNext();
+                   i++;
+               } else return null;
            }
         }
         return null;
     }
 
-   /* public boolean delete(int index) {
-        //PUT YOUR CODE HERE
-        //PUT YOUR CODE HERE
-    }*/
+    public boolean delete(int index) {
+        if (index < 0 ) {
+            return false;
+        }
+        Node n = head;
+        Node prev = n;
+
+        if (head == tail) {
+            tail = null;
+            head = null;
+            return true;
+        }
+        for (int i=0; i<=index && n!=null; i++) {
+           if (i == index) {
+                if (n == tail) {
+                    prev.setNext(null);
+                }
+                else if (n == head) {
+                    head = n.getNext();
+                }
+                else {
+                    prev.setNext(n.getNext());
+                    return true;
+                }
+
+            } else {
+                prev = n;
+                n = n.getNext();
+            }
+
+        }
+        return false;
+    }
 
     /*public int size() {
         //PUT YOUR CODE HERE
