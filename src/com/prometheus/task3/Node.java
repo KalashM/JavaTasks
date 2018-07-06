@@ -1,8 +1,8 @@
 package com.prometheus.task3;
 
 public class Node{
-    public Node next;
-    public Integer data;
+    private Node next;
+    private Integer data;
 
     public Node() {
     }
