@@ -1,4 +1,4 @@
-package com.prometheus.task3;
+package com.prometheus.task3.linkedlist;
 
 public class LinkedList {
     private Node tail;

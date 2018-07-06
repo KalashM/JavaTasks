@@ -1,5 +1,7 @@
 package com.prometheus.task3;
 
+import com.prometheus.task3.linkedlist.LinkedList;
+
 public class Demo {
     public static void main(String[] args) {
         LinkedList l1 = new LinkedList();
