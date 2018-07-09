@@ -2,16 +2,36 @@ package com.prometheus.task3.carddeck;
 
 
 public class Deck {
-    private Card card;
+    private Card[] cards;
+    Rank[] r1 = Rank.values;
+    Suit[] s1 = Suit.values;
+    int k=0;
 
-    public Deck() {}
+    public Deck() {
+        cards = new Card[36];
 
-    //Перемішує колоду у випадковому порядку
-    public void shuffle() {
+        for (int i=0; i<r1.length; i++) {
+            for (int j=0; j<s1.length; j++) {
+                cards[k] = new Card(r1[i],s1[j]);
+                System.out.println(k + ' '+cards[k].getRank().getName() + cards[k].getSuit().getName());
+            }
+            k++;
+        }
 
     }
 
-    /* * Впорядкування колоди за мастями та значеннями
+    public void printDeck() {
+        for (int n=0; n<36 ; n++){
+            System.out.println(cards[n].getRank().getName() + ' ' + cards[n].getSuit().getName());
+        }
+    }
+
+    //Перемішує колоду у випадковому порядку
+    /*public void shuffle() {
+
+    }
+
+    *//* * Впорядкування колоди за мастями та значеннями
     * Порядок сотрування:
     * Спочатку всі карти з мастю HEARTS, потім DIAMONDS, CLUBS, SPADES
     * для кожної масті порядок наступний: Ace,King,Queen,Jack,10,9,8,7,6
@@ -25,7 +45,7 @@ public class Deck {
     * HEARTS 8
     * HEARTS 7
     * HEARTS 6
-    * І так далі для DIAMONDS, CLUBS, SPADES */
+    * І так далі для DIAMONDS, CLUBS, SPADES *//*
     public void order() {
     }
 
@@ -37,6 +57,6 @@ public class Deck {
     //Карти виймаються з "вершини" колоди. Наприклад перший виклик видасть SPADES 6 потім
     //SPADES 7, ..., CLUBS 6, ..., CLUBS Ace і так далі до HEARTS Ace
     public Card drawOne() {
-    }
+    }*/
 }
 
