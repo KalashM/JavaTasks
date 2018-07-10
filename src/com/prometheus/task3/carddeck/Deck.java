@@ -5,22 +5,21 @@ public class Deck {
     private Card[] cards;
     Rank[] r1 = Rank.values;
     Suit[] s1 = Suit.values;
-    int k=0;
+
 
     public Deck() {
         cards = new Card[36];
-
+        int k=0;
         for (int i=0; i<r1.length; i++) {
             for (int j=0; j<s1.length; j++) {
                 cards[k] = new Card(r1[i],s1[j]);
-                System.out.println(k + ' '+cards[k].getRank().getName() + cards[k].getSuit().getName());
+                k++;
             }
-            k++;
         }
-
     }
 
     public void printDeck() {
+        Card[] cards = this.cards;
         for (int n=0; n<36 ; n++){
             System.out.println(cards[n].getRank().getName() + ' ' + cards[n].getSuit().getName());
         }
