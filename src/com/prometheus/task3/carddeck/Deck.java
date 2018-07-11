@@ -9,11 +9,11 @@ public class Deck {
 
     public Deck() {
         cards = new Card[36];
-        int k=0;
+        int index=0;
         for (int i=0; i<r1.length; i++) {
             for (int j=0; j<s1.length; j++) {
-                cards[k] = new Card(r1[i],s1[j]);
-                k++;
+                cards[index] = new Card(r1[i],s1[j]);
+                index++;
             }
         }
     }
@@ -26,11 +26,19 @@ public class Deck {
     }
 
     //Перемішує колоду у випадковому порядку
-    /*public void shuffle() {
-
+    public void shuffle() {
+        Card[] cards = this.cards;
+        Card card;
+        int temp;
+        for (int i=0; i<36; i++) {
+            temp = (int)(Math.random()*(36-i)+i);
+            card = cards[i];
+            cards[i]=cards[temp];
+            cards[temp] = card;
+        }
     }
 
-    *//* * Впорядкування колоди за мастями та значеннями
+    /*/* * Впорядкування колоди за мастями та значеннями
     * Порядок сотрування:
     * Спочатку всі карти з мастю HEARTS, потім DIAMONDS, CLUBS, SPADES
     * для кожної масті порядок наступний: Ace,King,Queen,Jack,10,9,8,7,6
