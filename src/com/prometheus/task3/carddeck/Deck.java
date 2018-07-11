@@ -30,7 +30,7 @@ public class Deck {
         Card[] cards = this.cards;
         Card card;
         int temp;
-        for (int i=0; i<36; i++) {
+        for (int i=0; i<cards.length; i++) {
             temp = (int)(Math.random()*(36-i)+i);
             card = cards[i];
             cards[i]=cards[temp];
@@ -38,7 +38,7 @@ public class Deck {
         }
     }
 
-    /*/* * Впорядкування колоди за мастями та значеннями
+    /* * Впорядкування колоди за мастями та значеннями
     * Порядок сотрування:
     * Спочатку всі карти з мастю HEARTS, потім DIAMONDS, CLUBS, SPADES
     * для кожної масті порядок наступний: Ace,King,Queen,Jack,10,9,8,7,6
@@ -52,11 +52,21 @@ public class Deck {
     * HEARTS 8
     * HEARTS 7
     * HEARTS 6
-    * І так далі для DIAMONDS, CLUBS, SPADES *//*
+    * І так далі для DIAMONDS, CLUBS, SPADES */
     public void order() {
+        Card[] cards = this.cards;
+        int index=0;
+        int j=0;
+        while (j<s1.length) {
+            for (int i=0; i<r1.length; i++) {
+                cards[index] = new Card(r1[i],s1[j]);
+                index++;
+            }
+            j++;
+        }
     }
 
-    //Повертає true у випадку коли в колоді ще доступні карти
+    /*//Повертає true у випадку коли в колоді ще доступні карти
     public boolean hasNext() {
     }
 
